@@ -2,7 +2,6 @@ from fastapi import FastAPI, HTTPException
 from utils import *
 import os
 from typing import Optional, List
-from models import *
 
 # Получает директорию текущего скрипта
 script_dir = os.path.dirname(os.path.abspath(__file__))
