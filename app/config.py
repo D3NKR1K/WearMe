@@ -3,13 +3,13 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    DB_HOST: str
-    DB_PORT: int
-    DB_NAME: str
-    DB_USER: str
-    DB_PASSWORD: str
+    DB_HOST: str = 'localhost'
+    DB_PORT: int = 5433
+    DB_NAME: str = 'fast_api'
+    DB_USER: str = 'admin'
+    DB_PASSWORD: str = 'admin12345'
     model_config = SettingsConfigDict(
-        env_file=os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '.env')
+        env_file=os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".env")
     )
 
 settings = Settings()
