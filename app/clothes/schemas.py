@@ -20,8 +20,18 @@ class Color(str, Enum):
     green = "Зеленый"
     white = "Белый"
 
-class SCloth(BaseModel):
+class SClothGet(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
     id: int
+    brand: Brand = Field(..., description="Бренд одежды")
+    category: Category = Field(..., description="Категория одежды")
+    color: Color = Field(..., description="Цвет одежды")
+    height: int = Field(..., description="Ростовая мерка одежды")
+    chest: int = Field(..., description="...")
+    waist: int = Field(..., description="...")
+    hips: int = Field(..., description="...")
+
+class SClothAdd(BaseModel):
     brand: Brand = Field(..., description="Бренд одежды")
     category: Category = Field(..., description="Категория одежды")
     color: Color = Field(..., description="Цвет одежды")
