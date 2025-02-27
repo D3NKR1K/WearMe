@@ -1,0 +1,29 @@
+<resources>
+  <string name="app_name">WearMe</string>
+  <string name="app_slogan">Dress to Impress, Effortlessly</string>
+
+  <string name="header_signUpPage">Sign Up</string>
+  <string name="button_signUpPage">Create Account</string>
+
+  <string name="hint_user_name">Full Name</string>
+  <string name="hint_user_email">Email</string>
+  <string name="hint_user_password">Password</string>
+
+  <string name="header_signInPage">Sign In</string>
+  <string name="button_signInPage">Login</string>
+
+  <string name="link_to_SignUpPage_description">Don\'t have an account?</string>
+  <string name="link_to_SignInPage_description">You have an account?</string>
+
+  <string name="sign_up">Sign Up</string>
+  <string name="error_empty_name">Please enter your name</string>
+  <string name="error_short_name">Name must be at least 3 characters</string>
+  <string name="error_empty_email">Please enter email</string>
+  <string name="error_invalid_email">Invalid email format</string>
+  <string name="error_empty_password">Please enter password</string>
+  <string name="error_short_password">Password must be at least 8 characters</string>
+  <string name="error_no_uppercase">Password must contain at least one uppercase letter</string>
+  <string name="registration_failed">Registration failed. Please try again</string>
+  <string name="retry">Retry</string>
+
+</resources>

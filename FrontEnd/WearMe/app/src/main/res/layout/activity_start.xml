@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/white"
+  android:padding="24dp"
+  tools:context=".MainActivity">
+
+  <!-- Vertical Guidelines -->
+  <androidx.constraintlayout.widget.Guideline
+    android:id="@+id/guideline_top"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintGuide_percent="0.3" />
+
+  <androidx.constraintlayout.widget.Guideline
+    android:id="@+id/guideline_bottom"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintGuide_percent="0.7" />
+
+  <!-- Horizontal Guidelines -->
+  <androidx.constraintlayout.widget.Guideline
+    android:id="@+id/button_left_guideline"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintGuide_percent="0.15" />
+
+  <androidx.constraintlayout.widget.Guideline
+    android:id="@+id/button_right_guideline"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintGuide_percent="0.85" />
+
+
+  <com.google.android.material.textview.MaterialTextView
+    android:id="@+id/header_title"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+
+    android:text="@string/app_name"
+    android:textAlignment="center"
+    android:textColor="@color/black"
+    android:textSize="56sp"
+    android:textStyle="bold"
+
+    app:fontFamily="@font/jua"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/guideline_top"
+    app:layout_constraintBottom_toTopOf="@id/header_slogan"/>
+
+  <com.google.android.material.textview.MaterialTextView
+    android:id="@+id/header_slogan"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+
+    android:text="@string/app_slogan"
+    android:textAlignment="center"
+    android:textColor="@color/black"
+    android:textSize="20sp"
+
+    app:fontFamily="@font/jua"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/header_title" />
+
+  <!-- LAYOUT SIGN IN BUTTON -->
+  <com.google.android.material.button.MaterialButton
+    android:id="@+id/layout_SignIn_button"
+
+    android:layout_width="0dp"
+    android:layout_height="56dp"
+
+    android:fontFamily="@font/jua"
+
+    android:text="LOGIN"
+    app:backgroundTint="@color/button_main_color"
+    app:cornerRadius="8dp"
+
+    app:layout_constraintBottom_toTopOf="@id/layout_SignUp_button"
+    app:layout_constraintEnd_toStartOf="@id/button_right_guideline"
+    app:layout_constraintStart_toEndOf="@id/button_left_guideline"
+    app:layout_constraintTop_toBottomOf="@id/header_slogan" />
+
+  <!-- LAYOUT SIGN UP BUTTON -->
+  <com.google.android.material.button.MaterialButton
+    android:id="@+id/layout_SignUp_button"
+
+    android:layout_width="0dp"
+    android:layout_height="56dp"
+
+    android:fontFamily="@font/jua"
+
+    android:text="SIGN UP"
+    app:backgroundTint="@color/button_main_color"
+    app:cornerRadius="8dp"
+
+    app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
+    app:layout_constraintEnd_toEndOf="@id/button_right_guideline"
+    app:layout_constraintStart_toStartOf="@id/button_left_guideline"
+    app:layout_constraintTop_toBottomOf="@id/layout_SignIn_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
