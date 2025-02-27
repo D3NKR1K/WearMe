@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
   <!-- Общий стиль для TextInputLayout -->
-  <style name="SignInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+  <style name="SignInputLayout" parent="Theme.WearMe">
     <item name="boxStrokeColor">?attr/colorPrimary</item>
     <item name="boxCornerRadiusBottomEnd">4dp</item>
     <item name="boxCornerRadiusTopEnd">4dp</item>
     <item name="boxCornerRadiusBottomStart">4dp</item>
     <item name="boxCornerRadiusTopStart">4dp</item>
   </style>
+
 </resources>

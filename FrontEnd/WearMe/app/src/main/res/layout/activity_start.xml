@@ -82,7 +82,8 @@
 
     android:fontFamily="@font/jua"
 
-    android:text="LOGIN"
+    android:text="@string/header_signInPage"
+    android:textAllCaps="true"
     app:backgroundTint="@color/button_main_color"
     app:cornerRadius="8dp"
 
@@ -100,7 +101,8 @@
 
     android:fontFamily="@font/jua"
 
-    android:text="SIGN UP"
+    android:text="@string/header_signUpPage"
+    android:textAllCaps="true"
     app:backgroundTint="@color/button_main_color"
     app:cornerRadius="8dp"
 
