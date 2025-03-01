@@ -1,4 +1,5 @@
-from sqlalchemy.orm import Mapped
+from sqlalchemy import text
+from sqlalchemy.orm import Mapped, mapped_column
 from app.database import Base, str_uniq, int_pk, int_null_true
 
 # Модель таблицы пользователей
@@ -7,10 +8,15 @@ class User(Base):
     name: Mapped[str]
     email: Mapped[str_uniq]
     password: Mapped[str]
-    height: Mapped[int]
-    chest: Mapped[int]
-    waist: Mapped[int]
-    hips: Mapped[int]
+    height: Mapped[int_null_true]
+    chest: Mapped[int_null_true]
+    waist: Mapped[int_null_true]
+    hips: Mapped[int_null_true]
+
+    is_user: Mapped[bool] = mapped_column(default=True, server_default=text('true'), nullable=False)
+    is_admin: Mapped[bool] = mapped_column(default=False, server_default=text('false'), nullable=False)
+    is_super_admin: Mapped[bool] = mapped_column(default=False, server_default=text('false'), nullable=False)
+
 
     def __str__(self):
         return (
