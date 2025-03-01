@@ -22,7 +22,6 @@ class Color(str, Enum):
 
 class SClothGet(BaseModel):
     model_config = ConfigDict(from_attributes=True)
-    id: int
     brand: Brand = Field(..., description="Бренд одежды")
     category: Category = Field(..., description="Категория одежды")
     color: Color = Field(..., description="Цвет одежды")
