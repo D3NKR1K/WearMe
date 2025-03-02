@@ -22,6 +22,17 @@ class SignInActivity : AppCompatActivity() {
     }
 
     setupValidation()
+
+    binding.layoutSignInButton.setOnClickListener {
+      if (isValidInput()) {
+        // start to sign in
+      }
+    }
+
+  }
+
+  private fun isValidInput() : Boolean {
+    return validateEmail()
   }
 
   private fun setupValidation() {

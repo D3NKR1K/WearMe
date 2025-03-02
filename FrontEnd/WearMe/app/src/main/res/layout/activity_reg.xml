@@ -6,8 +6,7 @@
 
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  android:padding="24dp"
-  android:background="@color/white"
+  android:background="@color/color_background"
 
   tools:context=".SignUpActivity">
 
@@ -29,25 +28,18 @@
   <!-- Horizontal Guidelines -->
 
   <androidx.constraintlayout.widget.Guideline
-    android:id="@+id/description_guideline"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    app:layout_constraintGuide_percent="0.68" />
-
-  <androidx.constraintlayout.widget.Guideline
     android:id="@+id/button_left_guideline"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    app:layout_constraintGuide_percent="0.15" />
+    app:layout_constraintGuide_percent="0.1" />
 
   <androidx.constraintlayout.widget.Guideline
     android:id="@+id/button_right_guideline"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    app:layout_constraintGuide_percent="0.85" />
+    app:layout_constraintGuide_percent="0.9" />
 
   <!-- PAGE LOGO -->
   <com.google.android.material.textview.MaterialTextView
@@ -55,7 +47,6 @@
 
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="24dp"
 
     android:text="@string/app_name"
     android:textAlignment="center"
@@ -64,8 +55,8 @@
     android:textStyle="bold"
     android:fontFamily="@font/jua"
 
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintStart_toEndOf="@id/button_left_guideline"
+    app:layout_constraintEnd_toStartOf="@id/button_right_guideline"
     app:layout_constraintTop_toBottomOf="@id/guideline_top"
     app:layout_constraintBottom_toTopOf="@id/header_SignUp_title"/>
 
@@ -75,7 +66,6 @@
 
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="24dp"
 
     android:text="@string/header_signUpPage"
     android:textAlignment="center"
@@ -84,8 +74,8 @@
     android:textStyle="bold"
     android:fontFamily="@font/jua"
 
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintStart_toEndOf="@id/button_left_guideline"
+    app:layout_constraintEnd_toStartOf="@id/button_right_guideline"
     app:layout_constraintTop_toBottomOf="@id/header_SignUp_logo"
     app:layout_constraintBottom_toTopOf="@id/layout_SignUp_name" />
 
@@ -95,8 +85,7 @@
 
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="24dp"
-    android:layout_marginTop="10dp"
+    android:layout_marginTop="20dp"
 
     app:errorEnabled="true"
     app:errorTextColor="@color/red"
@@ -105,8 +94,8 @@
     app:hintTextColor="@color/button_main_color"
     app:startIconDrawable="@drawable/ic_user_field"
 
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintStart_toEndOf="@id/button_left_guideline"
+    app:layout_constraintEnd_toStartOf="@id/button_right_guideline"
     app:layout_constraintTop_toBottomOf="@id/header_SignUp_title"
     app:layout_constraintBottom_toTopOf="@id/layout_SignUp_email"
 
@@ -133,7 +122,6 @@
 
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="24dp"
 
     app:errorEnabled="true"
     app:errorTextColor="@color/red"
@@ -144,8 +132,8 @@
 
     app:startIconDrawable="@drawable/ic_email_field"
 
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintStart_toEndOf="@id/button_left_guideline"
+    app:layout_constraintEnd_toStartOf="@id/button_right_guideline"
     app:layout_constraintTop_toBottomOf="@id/layout_SignUp_name"
     app:layout_constraintBottom_toTopOf="@id/layout_SignUp_password"
 
@@ -172,7 +160,6 @@
 
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="24dp"
 
     app:errorEnabled="true"
     app:errorTextColor="@color/red"
@@ -182,11 +169,12 @@
     app:cursorColor="@color/black"
 
     app:hintTextColor="@color/button_main_color"
-    app:layout_constraintBottom_toTopOf="@id/layout_SignUp_button"
-    app:layout_constraintEnd_toEndOf="parent"
 
-    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/layout_SignUp_button"
+    app:layout_constraintStart_toEndOf="@id/button_left_guideline"
+    app:layout_constraintEnd_toStartOf="@id/button_right_guideline"
     app:layout_constraintTop_toBottomOf="@id/layout_SignUp_email"
+
     app:passwordToggleEnabled="true"
     app:passwordToggleTint="#CBCACB"
 
@@ -218,44 +206,62 @@
     android:text="@string/button_signUpPage"
     android:fontFamily="@font/jua"
 
+    android:layout_marginHorizontal="24dp"
+
     app:layout_constraintEnd_toEndOf="@id/button_right_guideline"
     app:layout_constraintStart_toStartOf="@id/button_left_guideline"
     app:layout_constraintTop_toBottomOf="@id/layout_SignUp_password"
 
     app:cornerRadius="8dp" />
 
-  <!-- LAYOUT SIGN IN LINK -->
-  <com.google.android.material.textview.MaterialTextView
-    android:id="@+id/linkTo_SignIn"
-
+  <LinearLayout
     android:layout_width="0dp"
-    android:layout_height="wrap_content"
+    android:layout_height="0dp"
+    android:orientation="vertical"
 
-    android:text="@string/header_signInPage"
-    android:textSize="16sp"
-    android:textColor="@color/button_main_color"
-    android:fontFamily="@font/jua"
-    android:textAlignment="viewStart"
+    android:layout_marginTop="20dp"
 
+    android:weightSum="2"
+
+    app:layout_constraintTop_toBottomOf="@id/layout_SignUp_button"
+    app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
+    app:layout_constraintStart_toEndOf="@id/button_left_guideline"
     app:layout_constraintEnd_toStartOf="@id/button_right_guideline"
-    app:layout_constraintStart_toEndOf="@id/description_guideline"
-    app:layout_constraintBottom_toBottomOf="@id/guideline_bottom" />
+    >
 
-  <!-- LAYOUT SIGN IN LINK DESCRIPTION -->
-  <TextView
-    android:id="@+id/linkTo_SignUp_description"
+    <!-- LAYOUT SIGN IN LINK DESCRIPTION -->
+    <com.google.android.material.textview.MaterialTextView
+      android:id="@+id/linkTo_SignUp_description"
 
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
 
-    android:fontFamily="@font/jua"
-    android:text="@string/link_to_SignInPage_description"
-    android:textColor="@color/black"
-    android:textAlignment="center"
-    android:textSize="16sp"
+      android:gravity="bottom|center"
 
-    app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
-    app:layout_constraintEnd_toStartOf="@id/description_guideline"
-    app:layout_constraintStart_toStartOf="@id/button_left_guideline" />
+      android:layout_weight="1"
+      android:paddingBottom="5dp"
+
+      android:fontFamily="@font/jua"
+      android:text="@string/link_to_SignInPage_description"
+      android:textColor="@color/black"
+      android:textSize="16sp" />
+
+    <!-- LAYOUT SIGN IN LINK -->
+    <com.google.android.material.textview.MaterialTextView
+      android:id="@+id/linkTo_SignIn"
+
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+
+      android:gravity="top|center"
+      android:paddingTop="5dp"
+
+      android:text="@string/header_signInPage"
+      android:textSize="16sp"
+      android:textColor="@color/button_main_color"
+      android:fontFamily="@font/jua" />
+
+  </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
